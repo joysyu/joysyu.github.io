@@ -16,6 +16,10 @@ div.squares {
             width: 20px;
                 height: 30px;
 }
+
+#outer {
+  width: 1000000px;
+}
 </style>
 <script>
 window.onload = function(){
@@ -23,17 +27,19 @@ window.onload = function(){
 }
 
 </script>
+<div id="outer">
 <table id="onlyTable">
     <tr>
-          <td width="100%" id="leftCell">
-                  <div class="squares" id="leftDiv"></div><div id="middleDiv"></div>
-                      </td>
-                          <td width="100%" id="rightCell">
-                                  <div class="squares" id="rightDiv"></div>
-                                      </td>
-                                          <td width="100%" id="rightCell">
-                                                  <div class="squares" id="rightDiv"></div>
-                                                      </td>
-                                                        </tr>
+      <td width="100%" id="leftCell">
+        <div class="squares" id="leftDiv"></div><div id="middleDiv"></div>
+      </td>
+      <td width="100%" id="rightCell">
+        <div class="squares" id="rightDiv"></div>
+      </td>
+      <td width="100%" id="rightCell">
+        <div class="squares" id="rightDiv"></div>
+      </td>
+    </tr>
 </table>
+</div>
 <div id="showWidth"></div>
