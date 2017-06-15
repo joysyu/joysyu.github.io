@@ -19,7 +19,6 @@
 Table 1: Original
     </p>
     <table id="one">
-      <tbody>
         <tr>
             <td>
                 <span>row 1</span>
@@ -36,7 +35,6 @@ Table 1: Original
                 <span></span>
             </td>
         </tr>
-      </tbody>
         <tr>
             <td>
                 <span>row 3</span>
@@ -49,16 +47,15 @@ Table 1: Original
     <p>
 Table 2: Row 1 and Row 2 are both visibility:visible. Row 1 and Row 2 are within the same row group which is visibility: collapse. </p>
     <table id="two">
-      <tbody style="visibility:collapse;">
         <tr style="visibility:visible;">
-            <td>
+            <td style="visibility:collapse;">
                 <span>row 1</span>
             </td>
             <td>
                 <span></span>
             </td>
         </tr>
-        <tr style="visibility:visible;">
+        <tr>
             <td>
                 <span>row 2</span>
             </td>
@@ -66,7 +63,6 @@ Table 2: Row 1 and Row 2 are both visibility:visible. Row 1 and Row 2 are within
                 <span></span>
             </td>
         </tr>
-    </tbody>
         <tr>
             <td>
                 <span>row 3</span>

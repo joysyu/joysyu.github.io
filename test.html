@@ -1,0 +1,192 @@
+<style>
+
+table, tr, td {
+	border: 1px solid #000000;
+	border-collapse: collapse;
+}
+</style>
+
+<!--     <table>
+        <tr>
+            <td>
+                <span>row 1</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+    <tbody style="visibility:collapse;">
+        <tr style="visibility:visible;">
+            <td>
+                <span>row 2</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>
+                <span>row 3</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+    </table>
+yoyoy
+        <table>
+        <tr>
+            <td>
+                <span>row 1</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr  style="visibility:collapse;">
+            <td>
+                <span>row 2</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>row 3</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr> -->
+
+<!-- <table>
+    <thead>
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="4">&nbsp;</th>
+        </tr>
+        <tr>
+            <th>I</th>
+            <th>II</th>
+            <th>III</th>
+            <th>IIII</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+         </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="4">&nbsp;</th>
+        </tr>
+        <tr style="visibility: collapse;">
+            <th>I</th>
+            <th>II</th>
+            <th>III</th>
+            <th>IIII</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+         </tr>
+    </tbody>
+</table> -->
+
+<table>
+	<tr>
+    <td>HAIHAIHAIHAIHAI</td>
+		<td>ABCDEFG</td>
+	</tr>
+	<tr id="test" style="display: none;">
+		<td>ABABABAaaaaaaaaaaaaaaaaaaaaaaaaaaaBABBA</td>
+    <td>djfkdjfdilkjfdiljfdild</td>
+	<tr>
+    <td>hehehehehehehehehehehehehe</td>
+    <td>a b c d e f gh ij kl mn op o o o o o o o o o o o o o  o o o oooooo oo oooo ooo ooooooo oooooo oo   oooooooooooooo</td>
+	</tr>
+</table>
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+table, td {
+    outline: solid 1px black;
+    border-collapse: collapse;
+}
+
+#outer {
+  width: 200000px;
+}
+</style>
+<script>
+window.onload = function(){
+    showWidth.innerHTML = onlyTable.offsetWidth + "px";
+}
+
+</script>
+<div id="outer">
+<table id="onlyTable">
+    <tr>
+      <td width="100%" style="background: pink;">
+        <div ></div>
+      </td>
+      <td width="5%" style="background: green;">
+        <div ></div>
+      </td>
+    </tr>
+</table>
+</div>
+<div id="showWidth"></div>
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+table, td {
+    outline: solid 1px black;
+    border-collapse: collapse;
+}
+
+#outer {
+  width: 200000px;
+}
+</style>
+<script>
+window.onload = function(){
+    showWidth.innerHTML = onlyTable.offsetWidth + "px";
+}
+
+</script>
+<div id="outer">
+<table id="onlyTable">
+    <tr style="visibility:visible;">
+      <td style="background: pink; visibility:collapse;">
+        <div >row 1-1 </div>
+      </td>
+      <td style="background: green;">
+        <div >row 1</div>
+      </td>
+    </tr>
+</table>
+</div>
+<div id="showWidth"></div>
