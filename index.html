@@ -1,32 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset="utf-8">
-
+<link rel="author" title="Joy Yu" href="mailto:joysyu@mit.edu">
+<link rel="help" href="https://drafts.csswg.org/css-tables-3/#computing-the-table-height">
 <style>
-table, td {
-    outline: solid 1px black;
-    border-collapse: collapse;
-}
-
-#outer {
-  width: 20000000px;
-}
+    table {
+      border: 5px solid black;
+    }
+    table span {
+        display: inline-block;
+        vertical-align: top;
+        background: lime;
+        margin: 3px;
+        height: 100px;
+        width: 100px;
+    }
 </style>
-<script>
-window.onload = function(){
-    showWidth.innerHTML = onlyTable.offsetWidth;
-}
+<main>
+    <h1>Visibility collapse</h1>
+    <a href="https://drafts.csswg.org/css-tables-3/#computing-the-table-height">Spec</a>
+    <p>
+    Setting row group to visibility:collapse changes table height but not width.
+    </p>
+    <table id="one">
+      <tbody>
+        <tr>
+            <td>
+                <span>row 1</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>row 2</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+      </tbody>
+        <tr>
+            <td>
+                <span>row 3</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+    </table>
+    When row group is collapsed, visible rows within the row group are still collapsed and therefore invisible.
+    <table id="two">
+      <tbody style="visibility:collapse;">
+        <tr style="visibility:visible;">
+            <td>
+                <span>row 1</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr style="visibility:visible;">
+            <td>
+                <span>row 2</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+    </tbody>
+        <tr>
+            <td>
+                <span>row 3</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+    </table>
+</main>
 
-</script>
-<div id="outer">
-<table id="onlyTable">
-    <tr>
-      <td width="100%">
-        <div></div>
-      </td>
-      <td width="5%">
-        <div></div>
-      </td>
-    </tr>
-</table>
-</div>
-<div id="showWidth"></div>
+</html>
