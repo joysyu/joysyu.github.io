@@ -1,7 +1,4 @@
 <!doctype html>
-<meta charset="utf-8">
-<link rel="author" title="Joy Yu" href="mailto:joysyu@mit.edu">
-<link rel="help" href="https://drafts.csswg.org/css-tables-3/#computing-the-table-height">
 <style>
     table {
       border: 5px solid black;
@@ -19,7 +16,7 @@
     <h1>Visibility collapse</h1>
     <a href="https://drafts.csswg.org/css-tables-3/#computing-the-table-height">Spec</a>
     <p>
-    Setting row group to visibility:collapse changes table height but not width.
+Table 1: Original
     </p>
     <table id="one">
       <tbody>
@@ -49,7 +46,8 @@
             </td>
         </tr>
     </table>
-    When row group is collapsed, visible rows within the row group are still collapsed and therefore invisible.
+    <p>
+Table 2: Row 1 and Row 2 are both visibility:visible. Row 1 and Row 2 are within the same row group which is visibility: collapse. </p>
     <table id="two">
       <tbody style="visibility:collapse;">
         <tr style="visibility:visible;">
