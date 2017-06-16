@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <style>
     table {
       border: 5px solid black;
@@ -75,3 +75,48 @@ Table 2: Row 1 and Row 2 are both visibility:visible. Row 1 and Row 2 are within
 </main>
 
 </html>
+ -->
+
+ <!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+table, td {
+    outline: solid 1px black;
+    border-collapse: collapse;
+}
+
+#outer {
+  width: 200000px;
+}
+</style>
+<script>
+window.onload = function(){
+    showWidth.innerHTML = onlyTable.offsetWidth + "px";
+}
+
+</script>
+<div id="outer">
+<table id="onlyTable">
+    <tr>
+      <td width="100%" style="background: pink;">
+        <div ></div>
+      </td>
+      <td width="5%" style="background: green;">
+        <div ></div>
+      </td>
+    </tr>
+</table>
+</div>
+<div id="showWidth"></div>
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<style>
+table, td {
+    outline: solid 1px black;
+    border-collapse: collapse;
+}
+</style>
