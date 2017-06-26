@@ -1,124 +1,101 @@
-<!-- <!doctype html>
-<style>
-    table {
-      border: 5px solid black;
-    }
-    table span {
-        display: inline-block;
-        vertical-align: top;
-        background: lime;
-        margin: 3px;
-        height: 100px;
-        width: 100px;
-    }
-</style>
-<main>
-    <h1>Visibility collapse</h1>
-    <a href="https://drafts.csswg.org/css-tables-3/#computing-the-table-height">Spec</a>
-    <p>
-Table 1: Original
-    </p>
-    <table id="one">
-        <tr>
-            <td>
-                <span>row 1</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 2</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 3</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-    </table>
-    <p>
-Table 2: Row 1 and Row 2 are both visibility:visible. Row 1 and Row 2 are within the same row group which is visibility: collapse. </p>
-    <table id="two">
-        <tr style="visibility:visible;">
-            <td style="visibility:collapse;">
-                <span>row 1</span>
-            </td>
-            <td style="visibility:collapse;">
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 2</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 3</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-    </table>
-</main>
 
-</html>
- -->
-
- <!DOCTYPE html>
-<meta charset="utf-8">
 
 <style>
-table, td {
-    outline: solid 1px black;
+table {
+    border-spacing: 0;
     border-collapse: collapse;
 }
-
-#outer {
-  width: 3000000px;
+table td {
+    border: 1px solid blue;
+    padding: 5px;
 }
 </style>
-<script>
-window.onload = function(){
-    showWidth.innerHTML = onlyTable.offsetWidth + "px";
-}
-
-</script>
-<div id="outer">
-<table id="onlyTable">
-    <tr>
-      <td width="100%" style="background: pink;">
-        <div ></div>
-      </td>
-      <td width="60%" style="background: green;">
-        <div width="10px;"></div>
-      </td>
-      <td style="background: orange;">
-      </td>
-    </tr>
+<body>
+<table>
+    
+    <tr><td colspan="2"></td></tr>
+    
+    <tr><td rowspan="4">A</td></tr>
+    <tr><td>onur</td></tr>
+    <tr><td>onur</td></tr>
+    <tr><td>onur</td></tr>
+    
+    <tr><td colspan="2"></td></tr>
+    
+    <tr style="visibility:collapse;"><td rowspan="5">B</td></tr>
+    <tr><td>onur</td></tr>
+    <tr><td>onur</td></tr>
+    <tr><td>onur</td></tr>
+    <tr><td>onur</td></tr>
+    
 </table>
-</div>
-<div id="showWidth"></div>
+<!--     <table id="two">
+        <tr>
+            <td rowspan="5">Spanning Cell</td>
+        </tr>
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+    </table>
 
+<p>DID I FIND A BUG THO WHATTTTTTTTTTTTTTTTTT</p>
 
-<!DOCTYPE html>
-<meta charset="utf-8">
+    <table id="two">
+        <tr style="visibility:collapse;">
+            <td rowspan="5">Spanning Cell</td>
+        </tr>
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+    </table>
+ -->
+<!-- <script>
+row = document.getElementById("test");
 
-<style>
-table, td {
-    outline: solid 1px black;
-    border-collapse: collapse;
+currentDisplay = "table-row";
+currentVisibility = "visible";
+
+document.getElementById("displayButton").onclick = function(){
+  if (currentDisplay == "table-row"){
+    row.style.display = "none";
+    currentDisplay = "none";
+  } else {
+    row.style.display = "table-row";
+    currentDisplay = "table-row";
+  }
+  document.getElementById("currentDisplay").innerHTML = "display: " + currentDisplay;
 }
-</style>
+
+
+document.getElementById("visibilityButton").onclick = function(){
+  if (currentVisibility == "visible"){
+    row.style.visibility = "collapse";
+    currentVisibility = "collapse";
+  } else {
+    row.style.visibility = "visible";
+    currentVisibility = "visible";
+  }
+  document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
+}
+
+document.getElementById("currentDisplay").innerHTML = "display: " + currentDisplay;
+document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
+</script>
