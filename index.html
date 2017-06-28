@@ -28,40 +28,32 @@ table, th, td {
 
 <p>ff</p>
 
-<table>
-  <tr>
-    <th>Month</th>
-    <th>Savings</th>
-    <th>Savings for holiday!</th>
-  </tr>
-  <tr style="visibility: collapse;">
-    <td>January</td>
-    <td>$100</td>
-    <td rowspan="2">$50</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-  </tr>
-</table>
 
-<p>sfffds</p>
+    <table id="two">
 
-<table>
-  <tr>
-    <th>Month</th>
-    <th>Savings</th>
-    <th>Savings for holiday!</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td rowspan="2">$50</td>
-  </tr>
-  <tr style="visibility: collapse;">
-    <td>February</td>
-    <td>$80</td>
-  </tr>
-</table>
+        <tr id="spanningRow">
+            <td rowspan="5" id="spanningCell">B<br>B<br>B<br>B<br>B</td>
+        </tr>
+
+        <tr id="firstRow">
+            <td>aaaa</td>
+        </tr>
+
+        <tr id="secondRow" style="visibility: collapse">
+            <td>bbbb</td>
+        </tr>
+
+        <tr id="thirdRow">
+            <td>cccc</td>
+        </tr>
+
+        <tr id="fourthRow">
+            <td>dddd</td>
+        </tr>
+
+    </table>
+
+    This text should not intersect with the table.
+
 </body>
 </html>
