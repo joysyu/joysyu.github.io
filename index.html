@@ -2,58 +2,55 @@
 <html>
 <head>
 <style>
-table, th, td {
-    border: 1px solid black;
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+table td {
+    border: 1px solid blue;
+    padding: 5px;
 }
 </style>
 </head>
 <body>
 
-<table>
-  <tr style="visibility: collapse;">
-    <th>Month</th>
-    <th>Savings</th>
-    <th>Savings for holiday!</th>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td rowspan="2">$50</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-  </tr>
-</table>
-
-<p>ff</p>
-
-
-    <table id="two">
-
-        <tr id="spanningRow">
-            <td rowspan="5" id="spanningCell">B<br>B<br>B<br>B<br>B</td>
-        </tr>
-
-        <tr id="firstRow">
-            <td>aaaa</td>
-        </tr>
-
-        <tr id="secondRow" style="visibility: collapse">
-            <td>bbbb</td>
-        </tr>
-
-        <tr id="thirdRow">
-            <td>cccc</td>
-        </tr>
-
-        <tr id="fourthRow">
-            <td>dddd</td>
-        </tr>
-
+        <table id="one">
+      <tr id="spanningRowRef">
+        <td rowspan="5">B<br>B<br>B<br>B<br>B</td>
+      </tr>
+      <tr id="firstRowRef">
+        <td>aaaa</td>
+      </tr>
+      <tr>
+        <td>bbbb</td>
+      </tr>
+      <tr id="thirdRowRef">
+        <td>cccc</td>
+      </tr>
+      <tr id="fourthRowRef">
+        <td>dddd</td>
+      </tr>
     </table>
 
-    This text should not intersect with the table.
+ <p> bottom table has second row collapsed </p>
+
+        <table id="two">
+      <tr id="spanningRow">
+        <td rowspan="5" id="spanningCell">B<br>B<br>B<br>B<br>B</td>
+      </tr>
+      <tr id="firstRow">
+        <td>aaaa</td>
+      </tr>
+      <tr id="secondRow" style="visibility: collapse">
+        <td>bbbb</td>
+      </tr>
+      <tr id="thirdRow">
+        <td>cccc</td>
+      </tr>
+      <tr id="fourthRow">
+        <td>dddd</td>
+      </tr>
+    </table>
 
 </body>
 </html>
