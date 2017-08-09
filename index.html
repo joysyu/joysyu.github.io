@@ -1,187 +1,15 @@
-<!DOCTYPE html>
-<html>
-<!-- <head>
+<!-- <html>
 <style>
 table {
     border-spacing: 0;
     border-collapse: collapse;
 }
 table td {
-    border: 1px solid blue;
+    border: 5px solid black;
     padding: 5px;
 }
 </style>
-</head>
-<body>
-
-        <table id="one">
-      <tr id="spanningRowRef">
-        <td rowspan="5">B<br>B<br>B<br>B<br>B</td>
-      </tr>
-      <tr id="firstRowRef">
-        <td>aaaa</td>
-      </tr>
-      <tr style="visibility: collapse;">
-        <td>bbbb</td>
-      </tr>
-      <tr id="thirdRowRef">
-        <td>cccc</td>
-      </tr>
-      <tr id="fourthRowRef">
-        <td>dddd</td>
-      </tr>
-    </table>
-
- <p> bottom table has second row collapsed </p>
-
-        <table id="two">
-      <tr id="spanningRow">
-        <td rowspan="5" id="spanningCell">B<br>B<br>B<br>B<br>B</td>
-      </tr>
-      <tr id="firstRow">
-        <td>aaaa</td>
-      </tr>
-      <tr id="secondRow">
-        <td>bbbb</td>
-      </tr>
-      <tr id="thirdRow">
-        <td>cccc</td>
-      </tr>
-      <tr id="fourthRow">
-        <td>dddd</td>
-      </tr>
-    </table>
-vdffddf
-    <button id="secondRowButton">
-collapse row 2
-</button>
-<button id="secondRowButton2">
-uncollapse row 2
-</button>
-
-
-<table>
-  <tr>
-    <td>HAIHAIHAIHAIHIAHIAHIAHIAHIAHIAH</td>
-    <td>ABCDEFG</td>
-  </tr>
-  <tr id="test">
-    <td>ABABABABABBA</td>
-    <td>djfkdjfdilkjfdiljfdild</td>
-  <tr>
-    <td>hehehehehehehehehehehehehe</td>
-    <td>ooooo</td>
-  </tr>
-</table>
-
-<button type="button" id="displayButton">Change display
-</button>
-<div id="currentDisplay"></div>
-
-<button type="button" id="visibilityButton">Change visibility</button>
-<div id="currentVisibility"></div>
-
-<table>
-<tr>
-  <td>Row 1 Left</td>
-  <td>Row 1 Center</td>
-  <td rowspan=2 style="width:100px">Tall row with lots and lots of text</td>
-</tr>
-<tr id="middleRow">
-  <td>Row 2 Left</td>
-  <td>Row 2 Center</td>
-</tr>
-<tr>
-  <td>Row 3 Left</td>
-  <td>Row 3 Center</td>
-  <td>Row 3 Right</td>
-</tr>
-</table>
-
-<button id="theButton">
-collapse row 2
-</button>
-<button id="uncollapse">
-uncollapse row 2
-</button>
-
-</body>
-
-
-<script>
-row = document.getElementById("test");
-
-currentDisplay = "table-row";
-currentVisibility = "visible";
-
-document.getElementById("displayButton").onclick = function(){
-  if (currentDisplay == "table-row"){
-    row.style.display = "none";
-    currentDisplay = "none";
-  } else {
-    row.style.display = "table-row";
-    currentDisplay = "table-row";
-  }
-  document.getElementById("currentDisplay").innerHTML = "display: " + currentDisplay;
-}
-
-
-document.getElementById("visibilityButton").onclick = function(){
-  if (currentVisibility == "visible"){
-    row.style.visibility = "collapse";
-    currentVisibility = "collapse";
-  } else {
-    row.style.visibility = "visible";
-    currentVisibility = "visible";
-  }
-  document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
-}
-
-document.getElementById("currentDisplay").innerHTML = "display: " + currentDisplay;
-document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
-secondRowButton.onclick = function() {
-  secondRow.style.visibility = 'collapse';
-};
-
-secondRowButton2.onclick = function() {
-  secondRow.style.visibility = 'visible';
-};
-
-theButton.onclick = function() {
-  middleRow.style.visibility = 'collapse';
-};
-
-uncollapse.onclick = function() {
-  middleRow.style.visibility = 'visible';
-}
-</script>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-table {
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-table td {
-    border: 1px solid blue;
-    padding: 5px;
-}
-</style>
-<table>
+ <table>
   <colgroup>
     <col style="width:50%; background-color:red;">
     <col style="width:20%; background-color:yellow;">
@@ -217,43 +45,171 @@ fdjhdkgfhkjfs
   </tr>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-    <table id="two">
-      <tr id="spanningRow">
-        <td rowspan="5" id="spanningCell">B<br>B<br>B<br>B<br>B</td>
-            <td id="firstRow"> first row </td>
-      </tr>
-      <tr id="secondRow">
-        <td>aaaa</td>
-      </tr>
-      <tr id="thirdRow" style="visibility: collapse">
-        <td>bbbb</td>
-      </tr>
-      <tr id="fourthRow">
-        <td>cccc</td>
-      </tr>
-      <tr id="fifthRow">
-        <td>dddd</td>
-      </tr>
+<style>
+    table {
+      border: 5px solid black;
+    }
+    table span {
+        display: inline-block;
+        vertical-align: top;
+        background: lime;
+        margin: 3px;
+        height: 100px;
+        width: 100px;
+    }
+</style>
+  
+    <table id="one">
+      <tbody>
+        <tr>
+            <td>
+                <span>row 1</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>row 2</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>row 3</span>
+            </td>
+            <td>
+                <span style="height:50px"></span>
+            </td>
+        </tr>
+      </tbody>
     </table>
 
+  
+    <table id="two">
+      <col style="visibility:collapse;"></col>
+      <tbody>
+        <tr>
+            <td>
+                <span>row 1</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>row 2</span>
+            </td>
+            <td>
+                <span></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>row 3</span>
+            </td>
+            <td>
+                <span style="height:50px"></span>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+<style>
+table, td {
+    padding: .5em;
+    border: 1px solid #000;
+}
+
+.foo { background: #F00 }
+.bar { background: #0F0 }
+.hah {background: #00F;}
+</style>
+
+  <table>
+    <colgroup>
+        <col class="foo"  />
+        <col class="hah" span="2" style="visibility: collapse"/>
+
+    </colgroup>
+    <tbody>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+  <colgroup>
+    <col style="width:50%; background-color:red;">
+    <col style="width:20%; background-color:yellow;">
+    <col style="width:30%; background-color:green;">
+  </colgroup>
+  <tr>
+    <th>ISBN</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>3476896</td>
+    <td>My first HTML</td>
+    <td>$53</td>
+  </tr>
+</table>
+fdjhdkgfhkjfs
+<table>
+  <colgroup>
+    <col style="width:50%; background-color:red;">
+    <col style="width:20%; background-color:yellow;" id="thisOne">
+    <col style="width:30%; background-color:green;">
+  </colgroup>
+  <tr>
+    <th>ISBN</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>3476896</td>
+    <td>My first HTML</td>
+    <td>$53</td>
+  </tr>
+</table>
+
+<button type="button" id="visibilityButton">Change visibility</button>
+<div id="currentVisibility"></div>
+<script>
+row = document.getElementById("thisOne");
+
+currentVisibility = "visible";
 
 
+document.getElementById("visibilityButton").onclick = function(){
+  if (currentVisibility == "visible"){
+    row.style.visibility = "collapse";
+    currentVisibility = "collapse";
+  } else {
+    row.style.visibility = "visible";
+    currentVisibility = "visible";
+  }
+  document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
+}
 
+document.getElementById("currentDisplay").innerHTML = "display: " + currentDisplay;
+document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
+</script>
+ -->
 
-
-
-<!-- 
 
 
 <style>
@@ -270,60 +226,268 @@ fdjhdkgfhkjfs
     }
 </style>
 
-    <table id="two">
-      <tbody>
+<table>
+  <col style="background-color:red;">
+  <col style="background-color: blue; visibility: collapse;">
+  <col style="background-color: green;">
+  <tr>
+    <td>Month</td>
+    <td>Savings</td>
+    <td>Stuff</td>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+    <td>okay</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+    <td>hello</td>
+  </tr>
+  <tr>
+    <td colspan="3">Sum: $180</td>
+  </tr>
+</table>
+
+
+<table>
+  <col style="background-color:red; visibility: collapse;">
+  <col style="background-color: blue;">
+  <col style="background-color: green;">
+  <tr>
+    <td>HERE!!!</td>
+    <td>HERE!!!</td>
+    <td>HERE!!!</td>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+    <td>okay</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+    <td>hello</td>
+  </tr>
+  <tr>
+    <td colspan="2">Sum: $180</td>
+    <td>okay then</td>
+  </tr>
+</table>
+
+
+<!-- <style>
+table, td {
+    border: 1px solid;
+    height: 2em;
+    min-width: 2em;
+    white-space: nowrap;
+}
+</style>
+<table>
+   <col style="background-color: pink">
+   <col style="background-color: purple;">
+   <col style="background-color: black;">
+   <col style="background-color: grey">
+    <tbody>
         <tr>
-            <td>
-                <span>row 1</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
         </tr>
         <tr>
-            <td>
-                <span>row 2</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
+            <td colspan="2" rowspan="2"> </td>
+            <td> </td>
+            <td> </td>
         </tr>
         <tr>
-            <td>
-                <span>row 3</span>
-            </td>
-            <td>
-                <span style="height:50px"></span>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-    <table id="two">
-        <colgroup style="visibility:collapse;"></colgroup>
-      <tbody>
-        <tr>
-            <td>
-                <span>row 1</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
+            <td> </td>
+            <td> </td>
         </tr>
         <tr>
-            <td>
-                <span>row 2</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
+            <td> </td>
+            <td> </td>
+            <td colspan="2"> </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+   <col style="background-color: pink">
+   <col style="background-color: purple;">
+   <col style="background-color: black; visibility: collapse;">
+   <col style="background-color: grey; ">
+    <tbody>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
         </tr>
         <tr>
-            <td>
-                <span>row 3</span>
-            </td>
-            <td>
-                <span style="height:50px"></span>
-            </td>
+            <td colspan="2" rowspan="2"> </td>
+            <td> </td>
+            <td> </td>
         </tr>
-      </tbody>
-    </table> -->
+        <tr style="visibility:collapse">
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td colspan="2"> </td>
+        </tr>
+    </tbody>
+</table>
+
+ <table id="one">
+   <col style="background-color: pink;">
+   <col style="background-color: green;">
+   <col style="background-color: purple;">
+   <col style="background-color: grey;">
+  <tr>
+    <td>Month</td>
+    <td>Savings</td>
+    <td id="collapsedColumn">Savings for holiday!</td>
+    <td>Oh Lord Jesus</td>
+  </tr>
+  <tr>
+    <td rowspan="2" colspan="3">$50</td>
+    <td>Amen</td>
+  </tr>
+  <tr id="collapsedRow">
+    <td>hmm</td>
+  </tr>
+</table>
+    Collapsing a spanning row does not change table height in this case.
+ <table id="two">
+   <col style="background-color: pink;">
+   <col style="background-color: green;">
+   <col style="background-color: purple;">
+   <col style="background-color: grey; ">
+  <tr>
+    <td>Month</td>
+    <td>Savings</td>
+    <td>Savings for holiday!</td>
+    <td>Oh Lord Jesus</td>
+  </tr>
+  <tr>
+    <td rowspan="2" colspan="3" id="fifty"><div id="blah">$50<br>$50</div>/td>
+    <td>Amen</td>
+  </tr>
+  <tr style="visibility: collapse;">
+    <td>hmm</td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<div id="display"></div>
+<script>
+document.getElementById("blah").onclick = function(){
+  document.getElementById("display").innerHTML = "OKKKK";
+}
+</script>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <style>
+table {
+  font-size: 20px;
+}
+
+td {
+  border: 1px solid red;
+}
+
+#overflowdiv {
+  white-space: nowrap;
+}
+</style>
+<table>
+  <tr>
+    <td>cell1</td>
+    <td rowspan="2">
+      <div id="overflowdiv" style="outline: 1px solid cyan">
+        Overflow Overflow Overflow</div>
+    </td>
+  </tr>
+  <tr id="rowToChange1">
+    <td>hihi</td>
+  </tr>
+</table>
+
+<button style="position:absolute; top:80px" id="changeVisibility">
+  Change Visibility With Text
+</button>
+
+<div style="position:absolute; top:115px">
+Clicks on text div: <span id="clickcount">0</span>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<table>
+  <tr>
+    <td>cell1</td>
+    <td rowspan="2">
+      <div id="overflowingnotextdiv" style="outline: 1px solid cyan; height: 200px; width: 50px;"></div>
+    </td>
+  </tr>
+  <tr id="rowToChange">
+    <td>hihi</td>
+  </tr>
+</table>
+
+<button id="changeVisibilityNoText">
+  Change Visibility No Text
+</button>
+
+<script type="text/javascript">
+  states = ["visible", "collapse"];
+current = 0;
+changeVisibilityNoText.onclick = function() {
+  current = !current + 0;
+  rowToChange.style.visibility = states[current];
+}
+
+current1 = 0
+changeVisibility.onclick = function() {
+  current1 = !current1 + 0;
+  rowToChange1.style.visibility = states[current1];
+}
+
+clicks = 0;
+overflowdiv.onclick = function() {
+  clicks++;
+  clickcount.innerText = clicks;
+}
+</script> -->
