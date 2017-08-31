@@ -1,11 +1,175 @@
-<!-- <html>
+<html>
+<!-- 
+<style>
+    table span {
+        display: inline-block;
+        vertical-align: top;
+        background: lime;
+        margin: 3px;
+        height: 100px;
+        width: 100px;
+    }
+    td {
+      border: 5px solid pink;
+    }
+</style>
+<p>Normal table with nothing collapsed. First col is red, second col is blue, third col is green.</p>
+<table>
+  <col style="background-color:red;">
+  <col style="background-color: blue;">
+  <col style="background-color: green;">
+  <tr>
+    <td>Month</td>
+    <td>Savings</td>
+    <td>Stuff</td>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+    <td>okay</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+    <td>hello</td>
+  </tr>
+  <tr>
+    <td colspan="2">Sum: $180 overflow overflow</td>
+    <td>text text</td>
+  </tr>
+</table>
+
+
+
+
+
+<p>Same table as above but second col is collapsed.</p>
+<table>
+  <col style="background-color:red;">
+  <col id="toCollapse" style="background-color: blue; visibility: collapse;">
+  <col style="background-color: green;">
+  <tr>
+    <td>Month</td>
+    <td>Savings</td>
+    <td>Stuff</td>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+    <td>okay</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+    <td>hello</td>
+  </tr>
+  <tr>
+    <td colspan="2" id="stuff">Sum: $180 overflow overflow</td>
+    <td>text text</td>
+  </tr>
+</table>
+<br>
+<br>
+ <button id="ok">collapse or uncollapse second col</button>
+
+<div id="show"></div>
+
+
+<table>
+  <col style="background-color:red; visibility: collapse;">
+  <col style="background-color: blue;">
+  <col style="background-color: green;">
+  <tr>
+    <td>Month</td>
+    <td>Savings</td>
+    <td>Stuff</td>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+    <td>okay</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+    <td>hello</td>
+  </tr>
+  <tr>
+    <td colspan="2">Sum: $180 overflow overflow</td>
+    <td>text text</td>
+  </tr>
+</table>
+<script>
+states = ['collapse', 'visible'];
+current = 1;
+document.getElementById("ok").onclick = function(){
+  if (current == 1) {
+    current = 0;
+  } else {
+    current = 1;
+  }
+  document.getElementById('toCollapse').style.visibility = states[current];
+}
+number = 0;
+document.getElementById("stuff").onclick = function(){
+  number = number + 1;
+  document.getElementById("show").innerHTML = number;
+}
+</script>
+
+
 <style>
 table {
     border-spacing: 0;
     border-collapse: collapse;
 }
 table td {
-    border: 5px solid black;
+    border: 1px solid blue;
+    padding: 5px;
+}
+</style>
+<table>
+    <tr>
+      <td>Row 1 Left</td>
+      <td>Row 1 Center</td>
+      <td rowspan=2 style="width:100px"><p>Supersuperlongword</p><p>row with lots and lots of text</p></td>
+    </tr>
+    <tr style="visibility: collapse">
+      <td>Row 2 Left</td>
+      <td>Row 2 Center</td>
+    </tr>
+    <tr>
+      <td>Row 3 Left</td>
+      <td>Row 3 Center</td>
+      <td>Row 3 Right</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+table td {
     padding: 5px;
 }
 </style>
@@ -26,7 +190,6 @@ table td {
     <td>$53</td>
   </tr>
 </table>
-fdjhdkgfhkjfs
 <table>
   <colgroup>
     <col style="width:50%; background-color:red;">
@@ -43,7 +206,7 @@ fdjhdkgfhkjfs
     <td>My first HTML</td>
     <td>$53</td>
   </tr>
-</table>
+</table> 
 
 <style>
     table {
@@ -130,7 +293,7 @@ table, td {
 .hah {background: #00F;}
 </style>
 
-  <table>
+   <table>
     <colgroup>
         <col class="foo"  />
         <col class="hah" span="2" style="visibility: collapse"/>
@@ -208,102 +371,8 @@ document.getElementById("visibilityButton").onclick = function(){
 document.getElementById("currentDisplay").innerHTML = "display: " + currentDisplay;
 document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
 </script>
- -->
-
-
 
 <style>
-    table {
-      border: 5px solid black;
-    }
-    table span {
-        display: inline-block;
-        vertical-align: top;
-        background: lime;
-        margin: 3px;
-        height: 100px;
-        width: 100px;
-    }
-</style>
-<p>Normal table with nothing collapsed. First col is red, second col is blue, third col is green.</p>
-<table>
-  <col style="background-color:red;">
-  <col style="background-color: blue;">
-  <col style="background-color: green;">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td>Stuff</td>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td>okay</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-    <td>hello</td>
-  </tr>
-  <tr>
-    <td colspan="2">Sum: $180 overflow overflow</td>
-    <td>text text</td>
-  </tr>
-</table>
-
-<p>Same table as above but second col is collapsed.</p>
-<table>
-  <col style="background-color:red;">
-  <col style="background-color: blue; visibility: collapse;">
-  <col style="background-color: green;">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td>Stuff</td>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td>okay</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-    <td>hello</td>
-  </tr>
-  <tr>
-    <td colspan="2">Sum: $180 overflow overflow</td>
-    <td>text text</td>
-  </tr>
-</table>
-<p>Same as first table but first col is collapsed.</p>
-<table>
-  <col style="background-color:red; visibility: collapse;">
-  <col style="background-color: blue;">
-  <col style="background-color: green;">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td>Stuff</td>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td>okay</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-    <td>hello</td>
-  </tr>
-  <tr>
-    <td colspan="2">Sum: $180 overflow overflow</td>
-    <td>text text</td>
-  </tr>
-</table>
-
-
-<!-- <style>
 table, td {
     border: 1px solid;
     height: 2em;
@@ -417,8 +486,8 @@ document.getElementById("blah").onclick = function(){
   document.getElementById("display").innerHTML = "OKKKK";
 }
 </script>
- -->
 
+ -->
 
 
 
@@ -465,15 +534,15 @@ td {
     </td>
   </tr>
   <tr id="rowToChange1">
-    <td>hihi</td>
+    <td> <div style="position:relative;">FAIL</div></td>
   </tr>
 </table>
 
-<button style="position:absolute; top:80px" id="changeVisibility">
+<button id="changeVisibility">
   Change Visibility With Text
 </button>
 
-<div style="position:absolute; top:115px">
+<div>
 Clicks on text div: <span id="clickcount">0</span>
 </div>
 
@@ -482,14 +551,15 @@ Clicks on text div: <span id="clickcount">0</span>
 <br>
 <br>
 <table>
+  <col id="rowToChange">
   <tr>
     <td>cell1</td>
     <td rowspan="2">
       <div id="overflowingnotextdiv" style="outline: 1px solid cyan; height: 200px; width: 50px;"></div>
     </td>
   </tr>
-  <tr id="rowToChange">
-    <td>hihi</td>
+  <tr>
+    <td> <div style="position:relative;">FAIL</div></td>
   </tr>
 </table>
 
@@ -517,3 +587,132 @@ overflowdiv.onclick = function() {
   clickcount.innerText = clicks;
 }
 </script> -->
+<!-- 
+<table>
+    <tr style="visibility:collapse;">
+        <td>
+            <div style="position:relative;">Row is collapsed!</div>
+        </td>
+    </tr>
+</table>
+ -->
+
+
+<!-- <table>
+    <col style="visibility:collapse;">
+    <tr>
+        <td>
+            <div style="position:relative;">hi<div style="position:relative">inner hi</div></div>
+        </td>
+        <td>
+          <div>ok</div>
+        </td>
+    </tr>
+</table>  -->
+
+<!-- <table>
+    <col style="visibility:collapse;">
+    <tr>
+        <td>
+        </td>
+    </tr>
+</table> 
+
+
+<div style="position:relative;">you got this! Praise the Lord!</div> -->
+
+<!-- <table>
+  <col style="background-color: pink;">
+  <tr>
+      <td>
+          <div style="position:relative;">hi<div style="position:relative">hi inner</div></div>
+      </td>
+  </tr>
+</table> -->
+<!-- <style>
+.c8 { visibility: collapse;</style>
+<script>
+var nodes = Array();
+root_node = document.body ? document.body : document.documentElement;
+ nodes[20] = document.createElement('td'); 
+ root_node.appendChild(nodes[20]); 
+ nodes[22] = document.createElement('th'); 
+ nodes[22].setAttribute('colspan', '65536'); 
+ root_node.appendChild(nodes[22]); 
+ nodes[24] = document.createElement('colgroup'); 
+ nodes[24].setAttribute('class', 'c8'); 
+ root_node.appendChild(nodes[24]); 
+</script>
+ -->
+
+<!-- <html>
+<table>
+<colgroup style="visibility:collapse"></colgroup>
+<td></td>
+<td colspan="2"></td>
+</table>
+</html> -->
+
+
+<!doctype html>
+<meta charset="utf-8">
+<title>CSS Test: Relatively positioned divs in collapsed columns</title>
+<link rel="author" title="Joy Yu" href="mailto:joysyu@mit.edu">
+<link rel="help" href="https://drafts.csswg.org/css-tables-3/#visibility-collapse-cell-rendering">
+<link rel="match" href="visibility-collapse-col-006-ref.html">
+<p>The word "FAIL" should not be seen below.</p>
+<table>
+    <col id="colToChange">
+    <tr>
+        <td>
+            <div style="position:relative;">FAIL<div style="position:relative;">nested FAIL</div></div>
+        </td>
+    </tr>
+</table>
+
+<button id="b">
+  Change Visibility of column
+</button>
+
+<script type="text/javascript">
+states = ["visible", "collapse"];
+current = 0;
+b.onclick = function() {
+  current = !current + 0;
+  colToChange.style.visibility = "collapse";
+}
+
+
+</script>
+
+<table>
+    <col style="visibility:collapse">
+    <tr>
+      <td>
+        <span style="position:absolute;">FAIL</span>
+      </td>
+    </tr>
+</table>
+
+<table>
+    <col style="visibility:collapse">
+    <tr>
+        <td>
+          <table style="position:relative;">
+            <tr>
+              <td style="position:relative;">FAIL</td>
+              <td style="position:relative;">FAIL</td>
+            </tr>
+          </table>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <col style="visibility:collapse;">
+    <tr>
+        <td>
+            <div style="position:relative;">FAIL<div style="position:relative;">nested FAIL</div></div>
+        </td>
+    </tr>
+</table>
