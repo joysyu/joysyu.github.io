@@ -90,7 +90,24 @@
         sandbox="allow-popups allow-scripts allow-same-origin"
         frameborder="0"
         style="width: 400px; height: 520px"
-      ></iframe>
+      >
+      </iframe>
+
+      <div
+        onclick="() => {
+        window.postMessage({
+          'api': 'opencti_dialpad',
+          'version': '1.0',
+          'method': 'initiate_call',
+          'payload': {
+            'enable_current_tab': true,
+            'phone_number': '+15555555555',
+          }
+        });
+      }"
+      >
+        post a message to initiate call
+      </div>
 
       <div id="centerText">DRINKS AND SUCH</div>
     </div>
