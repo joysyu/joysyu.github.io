@@ -4,6 +4,8 @@ window.addEventListener(
     if (event.data.source !== "react-devtools-content-script") {
       console.log(event);
     }
+    const div = document.getElementById("abc");
+    div.innerHTML = event;
   },
   false
 );
@@ -19,7 +21,7 @@ function initiateCall() {
       method: "initiate_call",
       payload: {
         enable_current_tab: true,
-        phone_number: "+15555555555",
+        phone_number: "+15103669944",
       },
     },
     "https://dialpad.com"
