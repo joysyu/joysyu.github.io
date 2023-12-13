@@ -84,6 +84,7 @@
       </nav>
 
       <iframe
+        id="frame"
         src="https://dialpad.com/apps/zZZzWdLznxZv2BvhfXYb8BvWF"
         title="Dialpad"
         allow="microphone; speaker-selection; autoplay; camera; display-capture; hid"
@@ -93,23 +94,7 @@
       >
       </iframe>
 
-      <div
-        onclick="() => {
-        window.postMessage({
-          'api': 'opencti_dialpad',
-          'version': '1.0',
-          'method': 'initiate_call',
-          'payload': {
-            'enable_current_tab': true,
-            'phone_number': '+15555555555',
-          }
-        });
-      }"
-      >
-        post a message to initiate call
-      </div>
-
-      <div id="centerText">DRINKS AND SUCH</div>
+      <div id="button">DRINKS AND SUCH</div>
     </div>
   </body>
 </html>
