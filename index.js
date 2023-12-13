@@ -11,6 +11,7 @@ window.addEventListener(
 function initiateCall() {
   console.log("clicked!");
   const frame = document.getElementById("frame");
+  console.log(frame);
   frame.contentWindow.postMessage(
     {
       api: "opencti_dialpad",
