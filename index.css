@@ -1,0 +1,25 @@
+.backgroundImage {
+  position: relative;
+  background-image: url("pineapples.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  height: 100vh;
+  opacity: 0.8;
+}
+
+#centerText {
+  text-align: center;
+  color: white;
+  line-height: 500px;
+  font: Helvetica;
+  font-size: 70px;
+  font-style: bold;
+}
+
+.transparent-navbar {
+  background-color: rgba(0, 0, 0, 0);
+  /* Transparent = rgba(0,0,0,0) / Translucent = (0,0,0,0.5)  */
+  height: 60px;
+  border-bottom: 0px;
+  transition: background-color 0.5s ease 0s;
+}

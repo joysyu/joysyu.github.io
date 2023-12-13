@@ -1,718 +1,98 @@
 <html>
-<!-- 
-<style>
-    table span {
-        display: inline-block;
-        vertical-align: top;
-        background: lime;
-        margin: 3px;
-        height: 100px;
-        width: 100px;
-    }
-    td {
-      border: 5px solid pink;
-    }
-</style>
-<p>Normal table with nothing collapsed. First col is red, second col is blue, third col is green.</p>
-<table>
-  <col style="background-color:red;">
-  <col style="background-color: blue;">
-  <col style="background-color: green;">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td>Stuff</td>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td>okay</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-    <td>hello</td>
-  </tr>
-  <tr>
-    <td colspan="2">Sum: $180 overflow overflow</td>
-    <td>text text</td>
-  </tr>
-</table>
-
-
-
-
-
-<p>Same table as above but second col is collapsed.</p>
-<table>
-  <col style="background-color:red;">
-  <col id="toCollapse" style="background-color: blue; visibility: collapse;">
-  <col style="background-color: green;">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td>Stuff</td>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td>okay</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-    <td>hello</td>
-  </tr>
-  <tr>
-    <td colspan="2" id="stuff">Sum: $180 overflow overflow</td>
-    <td>text text</td>
-  </tr>
-</table>
-<br>
-<br>
- <button id="ok">collapse or uncollapse second col</button>
-
-<div id="show"></div>
-
-
-<table>
-  <col style="background-color:red; visibility: collapse;">
-  <col style="background-color: blue;">
-  <col style="background-color: green;">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td>Stuff</td>
-  </tr>
-  <tr>
-    <td>January</td>
-    <td>$100</td>
-    <td>okay</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$80</td>
-    <td>hello</td>
-  </tr>
-  <tr>
-    <td colspan="2">Sum: $180 overflow overflow</td>
-    <td>text text</td>
-  </tr>
-</table>
-<script>
-states = ['collapse', 'visible'];
-current = 1;
-document.getElementById("ok").onclick = function(){
-  if (current == 1) {
-    current = 0;
-  } else {
-    current = 1;
-  }
-  document.getElementById('toCollapse').style.visibility = states[current];
-}
-number = 0;
-document.getElementById("stuff").onclick = function(){
-  number = number + 1;
-  document.getElementById("show").innerHTML = number;
-}
-</script>
-
-
-<style>
-table {
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-table td {
-    border: 1px solid blue;
-    padding: 5px;
-}
-</style>
-<table>
-    <tr>
-      <td>Row 1 Left</td>
-      <td>Row 1 Center</td>
-      <td rowspan=2 style="width:100px"><p>Supersuperlongword</p><p>row with lots and lots of text</p></td>
-    </tr>
-    <tr style="visibility: collapse">
-      <td>Row 2 Left</td>
-      <td>Row 2 Center</td>
-    </tr>
-    <tr>
-      <td>Row 3 Left</td>
-      <td>Row 3 Center</td>
-      <td>Row 3 Right</td>
-    </tr>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-table {
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-table td {
-    padding: 5px;
-}
-</style>
- <table>
-  <colgroup>
-    <col style="width:50%; background-color:red;">
-    <col style="width:20%; background-color:yellow;">
-    <col style="width:30%; background-color:green;">
-  </colgroup>
-  <tr>
-    <th>ISBN</th>
-    <th>Title</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>3476896</td>
-    <td>My first HTML</td>
-    <td>$53</td>
-  </tr>
-</table>
-<table>
-  <colgroup>
-    <col style="width:50%; background-color:red;">
-    <col style="width:20%; background-color:yellow; visibility:collapse;">
-    <col style="width:30%; background-color:green;">
-  </colgroup>
-  <tr>
-    <th>ISBN</th>
-    <th>Title</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>3476896</td>
-    <td>My first HTML</td>
-    <td>$53</td>
-  </tr>
-</table> 
-
-<style>
-    table {
-      border: 5px solid black;
-    }
-    table span {
-        display: inline-block;
-        vertical-align: top;
-        background: lime;
-        margin: 3px;
-        height: 100px;
-        width: 100px;
-    }
-</style>
-  
-    <table id="one">
-      <tbody>
-        <tr>
-            <td>
-                <span>row 1</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 2</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 3</span>
-            </td>
-            <td>
-                <span style="height:50px"></span>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-
-  
-    <table id="two">
-      <col style="visibility:collapse;"></col>
-      <tbody>
-        <tr>
-            <td>
-                <span>row 1</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 2</span>
-            </td>
-            <td>
-                <span></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>row 3</span>
-            </td>
-            <td>
-                <span style="height:50px"></span>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-
-<style>
-table, td {
-    padding: .5em;
-    border: 1px solid #000;
-}
-
-.foo { background: #F00 }
-.bar { background: #0F0 }
-.hah {background: #00F;}
-</style>
-
-   <table>
-    <colgroup>
-        <col class="foo"  />
-        <col class="hah" span="2" style="visibility: collapse"/>
-
-    </colgroup>
-    <tbody>
-        <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-            <td>Row 1, Cell 3</td>
-        </tr>
-        <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
-            <td>Row 2, Cell 3</td>
-        </tr>
-    </tbody>
-</table>
-
-<table>
-  <colgroup>
-    <col style="width:50%; background-color:red;">
-    <col style="width:20%; background-color:yellow;">
-    <col style="width:30%; background-color:green;">
-  </colgroup>
-  <tr>
-    <th>ISBN</th>
-    <th>Title</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>3476896</td>
-    <td>My first HTML</td>
-    <td>$53</td>
-  </tr>
-</table>
-fdjhdkgfhkjfs
-<table>
-  <colgroup>
-    <col style="width:50%; background-color:red;">
-    <col style="width:20%; background-color:yellow;" id="thisOne">
-    <col style="width:30%; background-color:green;">
-  </colgroup>
-  <tr>
-    <th>ISBN</th>
-    <th>Title</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>3476896</td>
-    <td>My first HTML</td>
-    <td>$53</td>
-  </tr>
-</table>
-
-<button type="button" id="visibilityButton">Change visibility</button>
-<div id="currentVisibility"></div>
-<script>
-row = document.getElementById("thisOne");
-
-currentVisibility = "visible";
-
-
-document.getElementById("visibilityButton").onclick = function(){
-  if (currentVisibility == "visible"){
-    row.style.visibility = "collapse";
-    currentVisibility = "collapse";
-  } else {
-    row.style.visibility = "visible";
-    currentVisibility = "visible";
-  }
-  document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
-}
-
-document.getElementById("currentDisplay").innerHTML = "display: " + currentDisplay;
-document.getElementById("currentVisibility").innerHTML = "visibility: " + currentVisibility;
-</script>
-
-<style>
-table, td {
-    border: 1px solid;
-    height: 2em;
-    min-width: 2em;
-    white-space: nowrap;
-}
-</style>
-<table>
-   <col style="background-color: pink">
-   <col style="background-color: purple;">
-   <col style="background-color: black;">
-   <col style="background-color: grey">
-    <tbody>
-        <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td colspan="2" rowspan="2"> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td> </td>
-            <td> </td>
-            <td colspan="2"> </td>
-        </tr>
-    </tbody>
-</table>
-
-<table>
-   <col style="background-color: pink">
-   <col style="background-color: purple;">
-   <col style="background-color: black; visibility: collapse;">
-   <col style="background-color: grey; ">
-    <tbody>
-        <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td colspan="2" rowspan="2"> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr style="visibility:collapse">
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td> </td>
-            <td> </td>
-            <td colspan="2"> </td>
-        </tr>
-    </tbody>
-</table>
-
- <table id="one">
-   <col style="background-color: pink;">
-   <col style="background-color: green;">
-   <col style="background-color: purple;">
-   <col style="background-color: grey;">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td id="collapsedColumn">Savings for holiday!</td>
-    <td>Oh Lord Jesus</td>
-  </tr>
-  <tr>
-    <td rowspan="2" colspan="3">$50</td>
-    <td>Amen</td>
-  </tr>
-  <tr id="collapsedRow">
-    <td>hmm</td>
-  </tr>
-</table>
-    Collapsing a spanning row does not change table height in this case.
- <table id="two">
-   <col style="background-color: pink;">
-   <col style="background-color: green;">
-   <col style="background-color: purple;">
-   <col style="background-color: grey; ">
-  <tr>
-    <td>Month</td>
-    <td>Savings</td>
-    <td>Savings for holiday!</td>
-    <td>Oh Lord Jesus</td>
-  </tr>
-  <tr>
-    <td rowspan="2" colspan="3" id="fifty"><div id="blah">$50<br>$50</div>/td>
-    <td>Amen</td>
-  </tr>
-  <tr style="visibility: collapse;">
-    <td>hmm</td>
-  </tr>
-</table>
-<br>
-<br>
-<br>
-<div id="display"></div>
-<script>
-document.getElementById("blah").onclick = function(){
-  document.getElementById("display").innerHTML = "OKKKK";
-}
-</script>
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <style>
-table {
-  font-size: 20px;
-}
-
-td {
-  border: 1px solid red;
-}
-
-#overflowdiv {
-  white-space: nowrap;
-}
-</style>
-<table>
-  <tr>
-    <td>cell1</td>
-    <td rowspan="2">
-      <div id="overflowdiv" style="outline: 1px solid cyan">
-        Overflow Overflow Overflow</div>
-    </td>
-  </tr>
-  <tr id="rowToChange1">
-    <td> <div style="position:relative;">FAIL</div></td>
-  </tr>
-</table>
-
-<button id="changeVisibility">
-  Change Visibility With Text
-</button>
-
-<div>
-Clicks on text div: <span id="clickcount">0</span>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<table>
-  <col id="rowToChange">
-  <tr>
-    <td>cell1</td>
-    <td rowspan="2">
-      <div id="overflowingnotextdiv" style="outline: 1px solid cyan; height: 200px; width: 50px;"></div>
-    </td>
-  </tr>
-  <tr>
-    <td> <div style="position:relative;">FAIL</div></td>
-  </tr>
-</table>
-
-<button id="changeVisibilityNoText">
-  Change Visibility No Text
-</button>
-
-<script type="text/javascript">
-  states = ["visible", "collapse"];
-current = 0;
-changeVisibilityNoText.onclick = function() {
-  current = !current + 0;
-  rowToChange.style.visibility = states[current];
-}
-
-current1 = 0
-changeVisibility.onclick = function() {
-  current1 = !current1 + 0;
-  rowToChange1.style.visibility = states[current1];
-}
-
-clicks = 0;
-overflowdiv.onclick = function() {
-  clicks++;
-  clickcount.innerText = clicks;
-}
-</script> -->
-<!-- 
-<table>
-    <tr style="visibility:collapse;">
-        <td>
-            <div style="position:relative;">Row is collapsed!</div>
-        </td>
-    </tr>
-</table>
- -->
-
-
-<!-- <table>
-    <col style="visibility:collapse;">
-    <tr>
-        <td>
-            <div style="position:relative;">hi<div style="position:relative">inner hi</div></div>
-        </td>
-        <td>
-          <div>ok</div>
-        </td>
-    </tr>
-</table>  -->
-
-<!-- <table>
-    <col style="visibility:collapse;">
-    <tr>
-        <td>
-        </td>
-    </tr>
-</table> 
-
-
-<div style="position:relative;">you got this! Praise the Lord!</div> -->
-
-<!-- <table>
-  <col style="background-color: pink;">
-  <tr>
-      <td>
-          <div style="position:relative;">hi<div style="position:relative">hi inner</div></div>
-      </td>
-  </tr>
-</table> -->
-<!-- <style>
-.c8 { visibility: collapse;</style>
-<script>
-var nodes = Array();
-root_node = document.body ? document.body : document.documentElement;
- nodes[20] = document.createElement('td'); 
- root_node.appendChild(nodes[20]); 
- nodes[22] = document.createElement('th'); 
- nodes[22].setAttribute('colspan', '65536'); 
- root_node.appendChild(nodes[22]); 
- nodes[24] = document.createElement('colgroup'); 
- nodes[24].setAttribute('class', 'c8'); 
- root_node.appendChild(nodes[24]); 
-</script>
- -->
-
-<!-- <html>
-<table>
-<colgroup style="visibility:collapse"></colgroup>
-<td></td>
-<td colspan="2"></td>
-</table>
-</html> -->
-
-
-<!doctype html>
-<meta charset="utf-8">
-<title>CSS Test: Relatively positioned divs in collapsed columns</title>
-<link rel="author" title="Joy Yu" href="mailto:joysyu@mit.edu">
-<link rel="help" href="https://drafts.csswg.org/css-tables-3/#visibility-collapse-cell-rendering">
-<link rel="match" href="visibility-collapse-col-006-ref.html">
-<p>The word "FAIL" should not be seen below.</p>
-<table>
-    <col id="colToChange">
-    <tr>
-        <td>
-            <div style="position:relative;">FAIL<div style="position:relative;">nested FAIL</div></div>
-        </td>
-    </tr>
-</table>
-
-<button id="b">
-  Change Visibility of column
-</button>
-
-<script type="text/javascript">
-states = ["visible", "collapse"];
-current = 0;
-b.onclick = function() {
-  current = !current + 0;
-  colToChange.style.visibility = "collapse";
-}
-
-
-</script>
-
-<table>
-    <col style="visibility:collapse">
-    <tr>
-      <td>
-        <span style="position:absolute;">FAIL</span>
-      </td>
-    </tr>
-</table>
-
-<table>
-    <col style="visibility:collapse">
-    <tr>
-        <td>
-          <table style="position:relative;">
-            <tr>
-              <td style="position:relative;">FAIL</td>
-              <td style="position:relative;">FAIL</td>
-            </tr>
-          </table>
-        </td>
-    </tr>
-</table>
-
-<table>
-    <col style="visibility:collapse;">
-    <tr>
-        <td>
-            <div style="position:relative;">FAIL<div style="position:relative;">nested FAIL</div></div>
-        </td>
-    </tr>
-</table>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Abide Place</title>
+
+    <!-- javascript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="index.js"></script>
+
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+      integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="backgroundImage">
+      <nav class="navbar navbar-toggleable-md navbar-light transparent-navbar">
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a
+          class="navbar-brand"
+          href="#"
+          style="font: Helvetica; font-style: bold"
+          >Abide Place</a
+        >
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <iframe
+        id="dialpadiFrame"
+        title="dialPad"
+        width="300"
+        height="300"
+        src="https://dialpad.com/apps/front?auth_secret=1ccc46dcc4eb7954&front_domain=https%3A//front.frontapp.com"
+      >
+      </iframe>
+
+      <div id="centerText">DRINKS AND SUCH</div>
+    </div>
+  </body>
+</html>
