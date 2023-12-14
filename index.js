@@ -5,7 +5,7 @@ window.addEventListener(
       console.log(event);
     }
     const div = document.getElementById("abc");
-    div.innerHTML = event;
+    div.innerHTML = event.data;
   },
   false
 );
