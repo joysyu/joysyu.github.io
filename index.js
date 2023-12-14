@@ -4,8 +4,8 @@ window.addEventListener(
     if (event.data.source !== "react-devtools-content-script") {
       console.log(event);
     }
-    const div = document.getElementById("abc");
-    div.innerHTML = event.data;
+    // const div = document.getElementById("abc");
+    // div.innerHTML = event.data;
   },
   false
 );
