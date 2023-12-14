@@ -1,6 +1,7 @@
 window.addEventListener(
   "message",
   (event) => {
+    console.log("received message at ", Date.now());
     if (event.data.source !== "react-devtools-content-script") {
       console.log(event);
     }
