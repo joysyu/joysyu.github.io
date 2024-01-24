@@ -29,7 +29,7 @@ const NOTIFICATION_BODY = 'Notification from the Main process'
 function showNotification () {
   new Notification({ title: "fddfdfdfdf", body: "bodybodybody" }).show();
 
-  navigator.permissions.query({name: 'notifications'}).then((result) => {console.log(result.state)});
+  navigator.permissions.query({name: 'notifications'}).then((result) => {console.log("this is the permissions query result: ", result.state)});
 
 }
 // This method will be called when Electron has finished
