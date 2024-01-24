@@ -38,4 +38,6 @@ const notificationOptions = {
 
 const notification = new Notification(notificationOptions);
 
-notification.show();
+function onClick() {
+  notification.show();
+}
