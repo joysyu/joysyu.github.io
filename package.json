@@ -1,0 +1,14 @@
+{
+  "name": "hi",
+  "version": "1.0.0",
+  "description": "\"Hello\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.1.4"
+  }
+}
