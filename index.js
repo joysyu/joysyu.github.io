@@ -27,10 +27,11 @@ const NOTIFICATION_TITLE = 'Basic Notification'
 const NOTIFICATION_BODY = 'Notification from the Main process'
 
 function showNotification () {
-  new Notification({ title: "fddfdfdfdf", body: "bodybodybody" }).show();
 
   navigator.permissions.query({name: 'notifications'}).then((result) => {console.log("this is the permissions query result: ", result.state)});
 
+  
+  new Notification({ title: "fddfdfdfdf", body: "bodybodybody" }).show();
 }
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
