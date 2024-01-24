@@ -31,17 +31,13 @@ const {Notification} = require('electron');
 //   );
 // }
 
-const notificationOptions = {
-  title: "HELLO!!!!!",
-  body: "this is the body!!!",
-};
-
-const textDiv = document.getElementById('123');
-
-const notification = new Notification(notificationOptions);
-
 function onClick() {
+  const notificationOptions = {
+    title: "HELLO!!!!!",
+    body: "this is the body!!!",
+  };
+
+  const notification = new Notification(notificationOptions);
   notification.show();
   console.log(notification);
-  textDiv.textContent = notification;
 }
