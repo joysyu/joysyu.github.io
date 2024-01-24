@@ -42,5 +42,6 @@ const notification = new Notification(notificationOptions);
 
 function onClick() {
   notification.show();
+  console.log(notification);
   textDiv.textContent = notification;
 }
