@@ -1,4 +1,4 @@
-const {Notification} = require('electron');
+import { Notification } from 'electron';
 
 // window.addEventListener(
 //   "message",
