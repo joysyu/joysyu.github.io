@@ -1,8 +1,8 @@
 // main.js
 
 // Modules to control application life and create native browser window
-import { app, BrowserWindow, Notification } from 'electron'
-import { join } from 'node:path'
+const { app, BrowserWindow } = require('electron');
+const { join } = require('node:path');
 
 const createWindow = () => {
   // Create the browser window.
