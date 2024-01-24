@@ -1,8 +1,8 @@
 // main.js
 
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Notification } = require('electron')
-const path = require('node:path')
+import { app, BrowserWindow, Notification } from 'electron'
+import { join } from 'node:path'
 
 const createWindow = () => {
   // Create the browser window.
@@ -10,7 +10,7 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: false,
     }
@@ -58,9 +58,9 @@ function onClick() {
     body: "body",
   };
 
-  const notification = new Notification(notificationOptions);
+  // const notification = new Notification(notificationOptions);
 
-  notification.show();
+  // notification.show();
 
-  console.log("notification: ", notification);
+  showNotification();
 }
