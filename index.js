@@ -36,8 +36,11 @@ const notificationOptions = {
   body: "this is the body!!!",
 };
 
+const textDiv = document.getElementById('123');
+
 const notification = new Notification(notificationOptions);
 
 function onClick() {
   notification.show();
+  textDiv.textContent = notification;
 }
