@@ -72,17 +72,20 @@
 const btn = document.getElementById('abc');
 
 function doThingsWithCookies() {
+  console.log('do things with cookies');
   document.cookie = "foo=bar"; // set a cookie
 }
 
 async function handleCookieAccess() {
   console.log('im handling cookie access');
   if (!document.hasStorageAccess) {
+    console.log('browser doesnt support API');
     // This browser doesn't support the Storage Access API
     // so let's just hope we have access!
     doThingsWithCookies();
   } else {
     const hasAccess = await document.hasStorageAccess();
+    console.log('has Access? ', hasAccess);
     if (hasAccess) {
       // We have access to third-party cookies, so let's go
       doThingsWithCookies();
@@ -93,13 +96,16 @@ async function handleCookieAccess() {
         const permission = await navigator.permissions.query({
           name: "storage-access",
         });
+        console.log('permission: ', permission);
 
         if (permission.state === "granted") {
+          console.log('permission is granted');
           // If so, you can just call requestStorageAccess() without a user interaction,
           // and it will resolve automatically.
           await document.requestStorageAccess();
           doThingsWithCookies();
         } else if (permission.state === "prompt") {
+          console.log('permission is prompt');
           // Need to call requestStorageAccess() after a user interaction
           btn.addEventListener("click", async () => {
             try {
@@ -112,6 +118,7 @@ async function handleCookieAccess() {
             }
           });
         } else if (permission.state === "denied") {
+          console.log('permission is denied');
           // User has denied third-party cookie access, so we'll
           // need to do something else
         }
